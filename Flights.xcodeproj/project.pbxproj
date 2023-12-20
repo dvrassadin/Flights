@@ -9,26 +9,24 @@
 /* Begin PBXBuildFile section */
 		513646E02B32FA4F00A190E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513646DF2B32FA4F00A190E1 /* AppDelegate.swift */; };
 		513646E22B32FA4F00A190E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513646E12B32FA4F00A190E1 /* SceneDelegate.swift */; };
-		513646E42B32FA4F00A190E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513646E32B32FA4F00A190E1 /* ViewController.swift */; };
-		513646E72B32FA4F00A190E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 513646E52B32FA4F00A190E1 /* Main.storyboard */; };
 		513646E92B32FA5100A190E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 513646E82B32FA5100A190E1 /* Assets.xcassets */; };
 		513646EC2B32FA5100A190E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 513646EA2B32FA5100A190E1 /* LaunchScreen.storyboard */; };
 		513646F42B32FB4D00A190E1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 513646F32B32FB4D00A190E1 /* .gitignore */; };
 		513646F62B32FB9100A190E1 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513646F52B32FB9100A190E1 /* APIKey.swift */; };
+		513646F92B32FF8800A190E1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513646F82B32FF8800A190E1 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		513646DC2B32FA4F00A190E1 /* Flights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flights.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		513646DF2B32FA4F00A190E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		513646E12B32FA4F00A190E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		513646E32B32FA4F00A190E1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		513646E62B32FA4F00A190E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		513646E82B32FA5100A190E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		513646EB2B32FA5100A190E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		513646ED2B32FA5100A190E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		513646F32B32FB4D00A190E1 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		513646F52B32FB9100A190E1 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		513646F72B32FC2900A190E1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		513646F82B32FF8800A190E1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +64,7 @@
 				513646F52B32FB9100A190E1 /* APIKey.swift */,
 				513646DF2B32FA4F00A190E1 /* AppDelegate.swift */,
 				513646E12B32FA4F00A190E1 /* SceneDelegate.swift */,
-				513646E32B32FA4F00A190E1 /* ViewController.swift */,
-				513646E52B32FA4F00A190E1 /* Main.storyboard */,
+				513646F82B32FF8800A190E1 /* TabBarController.swift */,
 				513646E82B32FA5100A190E1 /* Assets.xcassets */,
 				513646EA2B32FA5100A190E1 /* LaunchScreen.storyboard */,
 				513646ED2B32FA5100A190E1 /* Info.plist */,
@@ -136,7 +133,6 @@
 				513646F42B32FB4D00A190E1 /* .gitignore in Resources */,
 				513646EC2B32FA5100A190E1 /* LaunchScreen.storyboard in Resources */,
 				513646E92B32FA5100A190E1 /* Assets.xcassets in Resources */,
-				513646E72B32FA4F00A190E1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,8 +143,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				513646E42B32FA4F00A190E1 /* ViewController.swift in Sources */,
 				513646E02B32FA4F00A190E1 /* AppDelegate.swift in Sources */,
+				513646F92B32FF8800A190E1 /* TabBarController.swift in Sources */,
 				513646F62B32FB9100A190E1 /* APIKey.swift in Sources */,
 				513646E22B32FA4F00A190E1 /* SceneDelegate.swift in Sources */,
 			);
@@ -157,14 +153,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		513646E52B32FA4F00A190E1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				513646E62B32FA4F00A190E1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		513646EA2B32FA5100A190E1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -305,10 +293,8 @@
 				DEVELOPMENT_TEAM = 4645TSUXP2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Flights/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -338,10 +324,8 @@
 				DEVELOPMENT_TEAM = 4645TSUXP2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Flights/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
