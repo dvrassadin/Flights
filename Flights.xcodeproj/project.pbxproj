@@ -14,6 +14,9 @@
 		513646F42B32FB4D00A190E1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 513646F32B32FB4D00A190E1 /* .gitignore */; };
 		513646F62B32FB9100A190E1 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513646F52B32FB9100A190E1 /* APIKey.swift */; };
 		513646F92B32FF8800A190E1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513646F82B32FF8800A190E1 /* TabBarController.swift */; };
+		513646FB2B33087200A190E1 /* FlightsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513646FA2B33087200A190E1 /* FlightsType.swift */; };
+		513646FD2B3308DC00A190E1 /* FlightsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513646FC2B3308DC00A190E1 /* FlightsTableViewController.swift */; };
+		513646FF2B3309BF00A190E1 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513646FE2B3309BF00A190E1 /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +30,9 @@
 		513646F52B32FB9100A190E1 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		513646F72B32FC2900A190E1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		513646F82B32FF8800A190E1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		513646FA2B33087200A190E1 /* FlightsType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsType.swift; sourceTree = "<group>"; };
+		513646FC2B3308DC00A190E1 /* FlightsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsTableViewController.swift; sourceTree = "<group>"; };
+		513646FE2B3309BF00A190E1 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,12 +70,23 @@
 				513646F52B32FB9100A190E1 /* APIKey.swift */,
 				513646DF2B32FA4F00A190E1 /* AppDelegate.swift */,
 				513646E12B32FA4F00A190E1 /* SceneDelegate.swift */,
-				513646F82B32FF8800A190E1 /* TabBarController.swift */,
+				513646FA2B33087200A190E1 /* FlightsType.swift */,
+				513647002B330A9E00A190E1 /* ViewControllers */,
+				513646FE2B3309BF00A190E1 /* NetworkService.swift */,
 				513646E82B32FA5100A190E1 /* Assets.xcassets */,
 				513646EA2B32FA5100A190E1 /* LaunchScreen.storyboard */,
 				513646ED2B32FA5100A190E1 /* Info.plist */,
 			);
 			path = Flights;
+			sourceTree = "<group>";
+		};
+		513647002B330A9E00A190E1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				513646F82B32FF8800A190E1 /* TabBarController.swift */,
+				513646FC2B3308DC00A190E1 /* FlightsTableViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,8 +162,11 @@
 			files = (
 				513646E02B32FA4F00A190E1 /* AppDelegate.swift in Sources */,
 				513646F92B32FF8800A190E1 /* TabBarController.swift in Sources */,
+				513646FD2B3308DC00A190E1 /* FlightsTableViewController.swift in Sources */,
 				513646F62B32FB9100A190E1 /* APIKey.swift in Sources */,
 				513646E22B32FA4F00A190E1 /* SceneDelegate.swift in Sources */,
+				513646FB2B33087200A190E1 /* FlightsType.swift in Sources */,
+				513646FF2B3309BF00A190E1 /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
