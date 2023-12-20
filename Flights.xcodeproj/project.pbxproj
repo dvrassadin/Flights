@@ -13,6 +13,8 @@
 		513646E72B32FA4F00A190E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 513646E52B32FA4F00A190E1 /* Main.storyboard */; };
 		513646E92B32FA5100A190E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 513646E82B32FA5100A190E1 /* Assets.xcassets */; };
 		513646EC2B32FA5100A190E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 513646EA2B32FA5100A190E1 /* LaunchScreen.storyboard */; };
+		513646F42B32FB4D00A190E1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 513646F32B32FB4D00A190E1 /* .gitignore */; };
+		513646F62B32FB9100A190E1 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513646F52B32FB9100A190E1 /* APIKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		513646E82B32FA5100A190E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		513646EB2B32FA5100A190E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		513646ED2B32FA5100A190E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		513646F32B32FB4D00A190E1 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		513646F52B32FB9100A190E1 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +45,7 @@
 			isa = PBXGroup;
 			children = (
 				513646DE2B32FA4F00A190E1 /* Flights */,
+				513646F32B32FB4D00A190E1 /* .gitignore */,
 				513646DD2B32FA4F00A190E1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,6 +61,7 @@
 		513646DE2B32FA4F00A190E1 /* Flights */ = {
 			isa = PBXGroup;
 			children = (
+				513646F52B32FB9100A190E1 /* APIKey.swift */,
 				513646DF2B32FA4F00A190E1 /* AppDelegate.swift */,
 				513646E12B32FA4F00A190E1 /* SceneDelegate.swift */,
 				513646E32B32FA4F00A190E1 /* ViewController.swift */,
@@ -125,6 +131,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				513646F42B32FB4D00A190E1 /* .gitignore in Resources */,
 				513646EC2B32FA5100A190E1 /* LaunchScreen.storyboard in Resources */,
 				513646E92B32FA5100A190E1 /* Assets.xcassets in Resources */,
 				513646E72B32FA4F00A190E1 /* Main.storyboard in Resources */,
@@ -140,6 +147,7 @@
 			files = (
 				513646E42B32FA4F00A190E1 /* ViewController.swift in Sources */,
 				513646E02B32FA4F00A190E1 /* AppDelegate.swift in Sources */,
+				513646F62B32FB9100A190E1 /* APIKey.swift in Sources */,
 				513646E22B32FA4F00A190E1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,11 +303,13 @@
 				DEVELOPMENT_TEAM = 4645TSUXP2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Flights/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,6 +317,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dvrassadin.Flights;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -323,11 +336,13 @@
 				DEVELOPMENT_TEAM = 4645TSUXP2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Flights/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -335,6 +350,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dvrassadin.Flights;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
