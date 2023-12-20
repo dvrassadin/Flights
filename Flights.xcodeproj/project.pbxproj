@@ -28,6 +28,7 @@
 		513646ED2B32FA5100A190E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		513646F32B32FB4D00A190E1 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		513646F52B32FB9100A190E1 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		513646F72B32FC2900A190E1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +47,7 @@
 			children = (
 				513646DE2B32FA4F00A190E1 /* Flights */,
 				513646F32B32FB4D00A190E1 /* .gitignore */,
+				513646F72B32FC2900A190E1 /* README.md */,
 				513646DD2B32FA4F00A190E1 /* Products */,
 			);
 			sourceTree = "<group>";
