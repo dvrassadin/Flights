@@ -15,6 +15,8 @@ struct Flight: Decodable {
     var number: String { thread.number }
     var title: String { thread.title }
     var vehicle: String? { thread.vehicle }
+    let arrival: Date?
+    let departure: Date?
     
     private let thread: Thread
     private struct Thread: Decodable {

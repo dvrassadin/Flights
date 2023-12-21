@@ -47,7 +47,13 @@ final class FlightsTableViewController: UITableViewController {
         let flight = flights[indexPath.row]
         var content = cell.defaultContentConfiguration()
         content.text = flight.title
-        content.secondaryText = flight.number
+        var dateAndTime: Date?
+        if let date = flight.arrival {
+            dateAndTime = date
+        } else if let date = flight.departure {
+            dateAndTime = date
+        }
+        content.secondaryText = dateAndTime?.formatted()
         cell.contentConfiguration = content
         return cell
     }

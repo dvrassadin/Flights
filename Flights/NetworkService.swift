@@ -26,6 +26,7 @@ final class YandexNetworkService: NetworkService {
             URLQueryItem(name: "station", value: "LED"),
             URLQueryItem(name: "lang", value: "ru_RU"),
             URLQueryItem(name: "format", value: "json"),
+            URLQueryItem(name: "date", value: "2023-12-21"),
             URLQueryItem(name: "system", value: "iata"),
             
         ])
@@ -43,6 +44,7 @@ final class YandexNetworkService: NetworkService {
         
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
+        decoder.dateDecodingStrategy = .iso8601
         
         guard let flights = try? decoder.decode(YandexResponse.self, from: data).schedule else {
             throw NetworkError.invalidData
