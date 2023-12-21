@@ -22,21 +22,23 @@ final class TabBarController: UITabBarController {
             flightsType: .arrivals,
             networkService: networkService
         )
+        let arrivalImage = UIImage(systemName: "airplane.arrival")
         let arrivalsTabBarItem = UITabBarItem(
             title: FlightsType.arrivals.rawValue,
-            image: UIImage(systemName: "airplane.arrival"),
-            selectedImage: UIImage(systemName: "airplane.arrival")
+            image: arrivalImage,
+            selectedImage: arrivalImage
         )
         arrivalsViewController.tabBarItem = arrivalsTabBarItem
         
         let departuresViewController = FlightsTableViewController(
-            flightsType: .arrivals,
+            flightsType: .departures,
             networkService: networkService
         )
+        let departureImage = UIImage(systemName: "airplane.departure")
         let departuresTabBarItem = UITabBarItem(
             title: FlightsType.departures.rawValue,
-            image: UIImage(systemName: "airplane.departure"),
-            selectedImage: UIImage(systemName: "airplane.departure")
+            image: departureImage,
+            selectedImage: departureImage
         )
         departuresViewController.tabBarItem = departuresTabBarItem
         
