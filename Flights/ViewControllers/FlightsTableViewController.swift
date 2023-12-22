@@ -8,9 +8,12 @@
 import UIKit
 
 final class FlightsTableViewController: UITableViewController {
+    
+    // MARK: - Properties
+    
     let flightsType: FlightsType
-    let networkService: NetworkService
-    var flights = [Flight]()
+    private let networkService: NetworkService
+    private var flights = [Flight]()
     
     // MARK: - Lifecycle
     
@@ -26,7 +29,10 @@ final class FlightsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
+        tableView.register(
+            FlightTableViewCell.self,
+            forCellReuseIdentifier: FlightTableViewCell.identifier
+        )
         updateFlights()
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
@@ -35,7 +41,6 @@ final class FlightsTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return flights.count
     }
 
@@ -43,18 +48,22 @@ final class FlightsTableViewController: UITableViewController {
         _ tableView: UITableView,
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-        let flight = flights[indexPath.row]
-        var content = cell.defaultContentConfiguration()
-        content.text = flight.title
-        var dateAndTime: Date?
-        if let date = flight.arrival {
-            dateAndTime = date
-        } else if let date = flight.departure {
-            dateAndTime = date
-        }
-        content.secondaryText = dateAndTime?.formatted()
-        cell.contentConfiguration = content
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: FlightTableViewCell.identifier,
+            for: indexPath
+        ) as? FlightTableViewCell else { return UITableViewCell() }
+//        let flight = flights[indexPath.row]
+//        var content = cell.defaultContentConfiguration()
+//        content.text = flight.title
+//        var dateAndTime: Date?
+//        if let date = flight.arrival {
+//            dateAndTime = date
+//        } else if let date = flight.departure {
+//            dateAndTime = date
+//        }
+//        content.secondaryText = dateAndTime?.formatted()
+//        cell.contentConfiguration = content
+        cell.configure(with: flights[indexPath.row], type: flightsType)
         return cell
     }
     

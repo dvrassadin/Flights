@@ -8,6 +8,6 @@
 import Foundation
 
 enum FlightsType: String {
-    case arrivals = "Arrivals"
     case departures = "Departures"
+    case arrivals = "Arrivals"
 }

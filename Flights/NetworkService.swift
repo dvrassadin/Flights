@@ -23,10 +23,10 @@ final class YandexNetworkService: NetworkService {
         
         url.append(queryItems: [
             URLQueryItem(name: "apikey", value: apiKey),
-            URLQueryItem(name: "station", value: "LED"),
+            URLQueryItem(name: "station", value: "SVO"),
             URLQueryItem(name: "lang", value: "ru_RU"),
             URLQueryItem(name: "format", value: "json"),
-            URLQueryItem(name: "date", value: "2023-12-21"),
+            URLQueryItem(name: "date", value: Date().ISO8601Format()),
             URLQueryItem(name: "system", value: "iata"),
             
         ])

@@ -74,11 +74,9 @@
 				513646F52B32FB9100A190E1 /* APIKey.swift */,
 				513646DF2B32FA4F00A190E1 /* AppDelegate.swift */,
 				513646E12B32FA4F00A190E1 /* SceneDelegate.swift */,
-				513646FA2B33087200A190E1 /* FlightsType.swift */,
-				513647002B330A9E00A190E1 /* ViewControllers */,
-				517967B92B3448B700827E02 /* FlightTableViewCell.swift */,
 				513646FE2B3309BF00A190E1 /* NetworkService.swift */,
-				517B0CD62B3328EF008B6B48 /* YandexResponse.swift */,
+				513647002B330A9E00A190E1 /* ViewControllers */,
+				517967BB2B348F5600827E02 /* Model */,
 				513646E82B32FA5100A190E1 /* Assets.xcassets */,
 				513646EA2B32FA5100A190E1 /* LaunchScreen.storyboard */,
 				513646ED2B32FA5100A190E1 /* Info.plist */,
@@ -91,8 +89,18 @@
 			children = (
 				513646F82B32FF8800A190E1 /* TabBarController.swift */,
 				513646FC2B3308DC00A190E1 /* FlightsTableViewController.swift */,
+				517967B92B3448B700827E02 /* FlightTableViewCell.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		517967BB2B348F5600827E02 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				513646FA2B33087200A190E1 /* FlightsType.swift */,
+				517B0CD62B3328EF008B6B48 /* YandexResponse.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
