@@ -65,15 +65,15 @@ final class FlightsTableViewController: UITableViewController {
                     flights = try await networkService.getFlight(.departures)
                 }
                 DispatchQueue.main.async {
-                    if self.activityIndicator.isAnimating {
-                        self.activityIndicator.stopAnimating()
-                    }
                     UIView.transition(
                         with: self.tableView,
                         duration: 0.5,
                         options: .transitionCrossDissolve
                     ) {
                         self.tableView.reloadData()
+                    }
+                    if self.activityIndicator.isAnimating {
+                        self.activityIndicator.stopAnimating()
                     }
                 }
             } catch {
@@ -110,5 +110,14 @@ final class FlightsTableViewController: UITableViewController {
             activityIndicator.centerYAnchor.constraint(equalTo: view.layoutMarginsGuide.centerYAnchor)
         ])
         activityIndicator.startAnimating()
+    }
+    
+    // MARK: - Navigation
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        navigationController?.pushViewController(
+            FlightDetailsViewController(flight: flights[indexPath.row], flightType: flightsType),
+            animated: true
+        )
     }
 }

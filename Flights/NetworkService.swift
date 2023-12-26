@@ -49,7 +49,7 @@ final class YandexNetworkService: NetworkService {
         guard let flights = try? decoder.decode(YandexResponse.self, from: data).schedule else {
             throw NetworkError.invalidData
         }
-        
+        print(flights.count)
         return flights
     }
 }

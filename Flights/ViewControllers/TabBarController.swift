@@ -15,7 +15,7 @@ final class TabBarController: UITabBarController {
             image: UIImage(systemName: "gearshape"),
             style: .plain,
             target: self,
-            action: #selector(openSettings)
+            action: #selector(openDatePicker)
         )
     }
     
@@ -51,7 +51,7 @@ final class TabBarController: UITabBarController {
         viewControllers = [departuresViewController, arrivalsViewController]
     }
     
-    @objc private func openSettings() {
+    @objc private func openDatePicker() {
         
     }
 }

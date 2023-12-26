@@ -17,8 +17,10 @@
 		513646FB2B33087200A190E1 /* FlightsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513646FA2B33087200A190E1 /* FlightsType.swift */; };
 		513646FD2B3308DC00A190E1 /* FlightsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513646FC2B3308DC00A190E1 /* FlightsTableViewController.swift */; };
 		513646FF2B3309BF00A190E1 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513646FE2B3309BF00A190E1 /* NetworkService.swift */; };
+		513CFECB2B3AB65D007F737F /* FlightDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513CFECA2B3AB65D007F737F /* FlightDetailsViewController.swift */; };
 		517967BA2B3448B800827E02 /* FlightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517967B92B3448B700827E02 /* FlightTableViewCell.swift */; };
 		517B0CD72B3328EF008B6B48 /* YandexResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517B0CD62B3328EF008B6B48 /* YandexResponse.swift */; };
+		51F205D12B3ADF6000BD7189 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F205D02B3ADF6000BD7189 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,8 +37,10 @@
 		513646FA2B33087200A190E1 /* FlightsType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsType.swift; sourceTree = "<group>"; };
 		513646FC2B3308DC00A190E1 /* FlightsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsTableViewController.swift; sourceTree = "<group>"; };
 		513646FE2B3309BF00A190E1 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		513CFECA2B3AB65D007F737F /* FlightDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDetailsViewController.swift; sourceTree = "<group>"; };
 		517967B92B3448B700827E02 /* FlightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightTableViewCell.swift; sourceTree = "<group>"; };
 		517B0CD62B3328EF008B6B48 /* YandexResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexResponse.swift; sourceTree = "<group>"; };
+		51F205D02B3ADF6000BD7189 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,8 @@
 				513646F82B32FF8800A190E1 /* TabBarController.swift */,
 				513646FC2B3308DC00A190E1 /* FlightsTableViewController.swift */,
 				517967B92B3448B700827E02 /* FlightTableViewCell.swift */,
+				513CFECA2B3AB65D007F737F /* FlightDetailsViewController.swift */,
+				51F205D02B3ADF6000BD7189 /* SettingsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -176,7 +182,9 @@
 			files = (
 				513646E02B32FA4F00A190E1 /* AppDelegate.swift in Sources */,
 				513646F92B32FF8800A190E1 /* TabBarController.swift in Sources */,
+				51F205D12B3ADF6000BD7189 /* SettingsViewController.swift in Sources */,
 				513646FD2B3308DC00A190E1 /* FlightsTableViewController.swift in Sources */,
+				513CFECB2B3AB65D007F737F /* FlightDetailsViewController.swift in Sources */,
 				513646F62B32FB9100A190E1 /* APIKey.swift in Sources */,
 				517967BA2B3448B800827E02 /* FlightTableViewCell.swift in Sources */,
 				513646E22B32FA4F00A190E1 /* SceneDelegate.swift in Sources */,
