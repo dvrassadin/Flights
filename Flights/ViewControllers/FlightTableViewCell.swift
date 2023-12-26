@@ -43,7 +43,7 @@ final class FlightTableViewCell: UITableViewCell {
     private let numberLabel: UILabel = {
         let label = UILabel()
         label.font = .preferredFont(forTextStyle: .headline)
-        label.textColor = .systemBrown
+        label.textColor = .systemRed
         return label
     }()
     
@@ -58,6 +58,7 @@ final class FlightTableViewCell: UITableViewCell {
     private let vehicleLabel: UILabel = {
         let label = UILabel()
         label.font = .preferredFont(forTextStyle: .footnote)
+        label.textColor = .systemGray
         return label
     }()
 

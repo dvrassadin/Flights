@@ -11,6 +11,12 @@ final class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addTabBarItems()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: "gearshape"),
+            style: .plain,
+            target: self,
+            action: #selector(openSettings)
+        )
     }
     
     // MARK: - Setup UI
@@ -43,5 +49,9 @@ final class TabBarController: UITabBarController {
         arrivalsViewController.tabBarItem = arrivalsTabBarItem
         
         viewControllers = [departuresViewController, arrivalsViewController]
+    }
+    
+    @objc private func openSettings() {
+        
     }
 }

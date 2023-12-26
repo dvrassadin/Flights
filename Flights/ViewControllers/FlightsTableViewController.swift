@@ -8,6 +8,7 @@
 import UIKit
 
 final class FlightsTableViewController: UITableViewController {
+    private let activityIndicator = UIActivityIndicatorView(style: .large)
     
     // MARK: - Properties
     
@@ -29,21 +30,19 @@ final class FlightsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(
-            FlightTableViewCell.self,
-            forCellReuseIdentifier: FlightTableViewCell.identifier
-        )
+        setupActivityIndicator()
+        setupTableView()
         updateFlights()
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+    
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return flights.count
     }
-
+    
     override func tableView(
         _ tableView: UITableView,
         cellForRowAt indexPath: IndexPath
@@ -52,17 +51,6 @@ final class FlightsTableViewController: UITableViewController {
             withIdentifier: FlightTableViewCell.identifier,
             for: indexPath
         ) as? FlightTableViewCell else { return UITableViewCell() }
-//        let flight = flights[indexPath.row]
-//        var content = cell.defaultContentConfiguration()
-//        content.text = flight.title
-//        var dateAndTime: Date?
-//        if let date = flight.arrival {
-//            dateAndTime = date
-//        } else if let date = flight.departure {
-//            dateAndTime = date
-//        }
-//        content.secondaryText = dateAndTime?.formatted()
-//        cell.contentConfiguration = content
         cell.configure(with: flights[indexPath.row], type: flightsType)
         return cell
     }
@@ -76,10 +64,51 @@ final class FlightsTableViewController: UITableViewController {
                 case .departures:
                     flights = try await networkService.getFlight(.departures)
                 }
-                DispatchQueue.main.async { self.tableView.reloadData() }
+                DispatchQueue.main.async {
+                    if self.activityIndicator.isAnimating {
+                        self.activityIndicator.stopAnimating()
+                    }
+                    UIView.transition(
+                        with: self.tableView,
+                        duration: 0.5,
+                        options: .transitionCrossDissolve
+                    ) {
+                        self.tableView.reloadData()
+                    }
+                }
             } catch {
                 print(error)
             }
         }
+    }
+    
+    // MARK: - SetupUI
+    
+    private func setupTableView() {
+        tableView.register(
+            FlightTableViewCell.self,
+            forCellReuseIdentifier: FlightTableViewCell.identifier
+        )
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(
+            self,
+            action: #selector(swipeToRefresh),
+            for: .valueChanged
+        )
+    }
+    
+    @objc private func swipeToRefresh() {
+        updateFlights()
+        refreshControl?.endRefreshing()
+    }
+    
+    private func setupActivityIndicator() {
+        view.addSubview(activityIndicator)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            activityIndicator.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: view.layoutMarginsGuide.centerYAnchor)
+        ])
+        activityIndicator.startAnimating()
     }
 }
