@@ -8,16 +8,15 @@
 import UIKit
 
 final class FlightsTableViewController: UITableViewController {
-    private let activityIndicator = UIActivityIndicatorView(style: .large)
     
     // MARK: - Properties
-    
-    let flightsType: FlightsType
-    private let networkService: NetworkService
+    private let activityIndicator = UIActivityIndicatorView(style: .large)
     private var flights = [Flight]()
+    private let flightsType: FlightsType
+    private let networkService: NetworkService
+    private(set) var date = Date()
     
     // MARK: - Lifecycle
-    
     init(flightsType: FlightsType, networkService: NetworkService) {
         self.flightsType = flightsType
         self.networkService = networkService
@@ -32,13 +31,10 @@ final class FlightsTableViewController: UITableViewController {
         super.viewDidLoad()
         setupActivityIndicator()
         setupTableView()
-        updateFlights()
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        updateFlights(date: date)
     }
     
     // MARK: - Table view data source
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return flights.count
     }
@@ -55,14 +51,18 @@ final class FlightsTableViewController: UITableViewController {
         return cell
     }
     
-    private func updateFlights() {
+    func updateFlights(date: Date) {
+        if !Calendar.current.isDate(date, inSameDayAs: self.date) {
+            self.date = date
+            activityIndicator.startAnimating()
+        }
         Task {
             do {
                 switch flightsType {
                 case .arrivals:
-                    flights = try await networkService.getFlight(.arrivals)
+                    flights = try await networkService.getFlight(.arrivals, date: date)
                 case .departures:
-                    flights = try await networkService.getFlight(.departures)
+                    flights = try await networkService.getFlight(.departures, date: date)
                 }
                 DispatchQueue.main.async {
                     UIView.transition(
@@ -83,7 +83,6 @@ final class FlightsTableViewController: UITableViewController {
     }
     
     // MARK: - SetupUI
-    
     private func setupTableView() {
         tableView.register(
             FlightTableViewCell.self,
@@ -98,7 +97,7 @@ final class FlightsTableViewController: UITableViewController {
     }
     
     @objc private func swipeToRefresh() {
-        updateFlights()
+        updateFlights(date: date)
         refreshControl?.endRefreshing()
     }
     
@@ -113,7 +112,6 @@ final class FlightsTableViewController: UITableViewController {
     }
     
     // MARK: - Navigation
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         navigationController?.pushViewController(
             FlightDetailsViewController(flight: flights[indexPath.row], flightType: flightsType),

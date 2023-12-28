@@ -8,11 +8,13 @@
 import UIKit
 
 final class TabBarController: UITabBarController {
+    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        addTabBarItems()
+        setupTabs()
         navigationItem.rightBarButtonItem = UIBarButtonItem(
-            image: UIImage(systemName: "gearshape"),
+            image: UIImage(systemName: "gear"),
             style: .plain,
             target: self,
             action: #selector(openDatePicker)
@@ -20,8 +22,7 @@ final class TabBarController: UITabBarController {
     }
     
     // MARK: - Setup UI
-    
-    private func addTabBarItems() {
+    private func setupTabs() {
         let networkService: NetworkService = YandexNetworkService()
         
         let departuresViewController = FlightsTableViewController(
@@ -52,6 +53,24 @@ final class TabBarController: UITabBarController {
     }
     
     @objc private func openDatePicker() {
-        
+        guard let flightsVC = selectedViewController as? FlightsTableViewController else {
+            return
+        }
+        let settingsVC = FlightsParametersViewController(date: flightsVC.date, delegate: self)
+        guard let sheet = settingsVC.sheetPresentationController else {
+            return
+        }
+        sheet.prefersGrabberVisible = true
+        sheet.detents = [.medium(), .large()]
+        present(settingsVC, animated: true)
+    }
+}
+
+// MARK: - FlightsParametersViewControllerDelegate
+
+extension TabBarController: FlightsParametersViewControllerDelegate {
+    func updateFlightsParameters(date: Date) {
+        guard let flightsVC = selectedViewController as? FlightsTableViewController else { return }
+        flightsVC.updateFlights(date: date)
     }
 }

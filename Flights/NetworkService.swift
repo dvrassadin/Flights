@@ -8,7 +8,7 @@
 import Foundation
 
 protocol NetworkService {
-    func getFlight(_ type: FlightsType) async throws -> [Flight]
+    func getFlight(_ type: FlightsType, date: Date) async throws -> [Flight]
 }
 
 enum NetworkError: Error {
@@ -18,7 +18,7 @@ enum NetworkError: Error {
 final class YandexNetworkService: NetworkService {
     private let baseURL = "https://api.rasp.yandex.net/v3.0/schedule"
     
-    func getFlight(_ type: FlightsType) async throws -> [Flight] {
+    func getFlight(_ type: FlightsType, date: Date) async throws -> [Flight] {
         guard var url = URL(string: baseURL) else { throw NetworkError.invalidURL }
         
         url.append(queryItems: [
@@ -26,7 +26,7 @@ final class YandexNetworkService: NetworkService {
             URLQueryItem(name: "station", value: "SVO"),
             URLQueryItem(name: "lang", value: "ru_RU"),
             URLQueryItem(name: "format", value: "json"),
-            URLQueryItem(name: "date", value: Date().ISO8601Format()),
+            URLQueryItem(name: "date", value: date.ISO8601Format()),
             URLQueryItem(name: "system", value: "iata"),
             
         ])
@@ -49,7 +49,7 @@ final class YandexNetworkService: NetworkService {
         guard let flights = try? decoder.decode(YandexResponse.self, from: data).schedule else {
             throw NetworkError.invalidData
         }
-        print(flights.count)
+
         return flights
     }
 }

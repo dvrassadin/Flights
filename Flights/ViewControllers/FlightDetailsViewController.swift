@@ -8,14 +8,11 @@
 import UIKit
 
 final class FlightDetailsViewController: UIViewController {
-    
     // MARK: - Properties
-    
     private let flight: Flight
     private let flightType: FlightsType
     
     // MARK: UI components
-    
     private let numberLabel: UILabel = {
         let label = UILabel()
         label.font = .preferredFont(forTextStyle: .largeTitle)
@@ -81,7 +78,6 @@ final class FlightDetailsViewController: UIViewController {
     }()
     
     // MARK: - Lifecycle
-    
     init(flight: Flight, flightType: FlightsType) {
         self.flight = flight
         self.flightType = flightType
@@ -98,7 +94,6 @@ final class FlightDetailsViewController: UIViewController {
     }
     
     // MARK: - Setup UI
-    
     private func setupUI() {
         view.backgroundColor = .systemBackground
         title = flight.number
