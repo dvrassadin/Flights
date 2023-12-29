@@ -175,7 +175,11 @@ final class FlightDetailsViewController: UIViewController {
     
     private func addData() {
         numberLabel.text = flight.number
-        carrierLabel.text = flight.carrierIATA + " " + flight.carrierTitle
+        if let carrierIATA = flight.carrierIATA {
+            carrierLabel.text = carrierIATA + " " + flight.carrierTitle
+        } else {
+            carrierLabel.text = flight.carrierTitle
+        }
         routeLabel.text = flight.title
         vehicleLabel.text = flight.vehicle
         if flight.terminal != nil {

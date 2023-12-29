@@ -15,6 +15,7 @@ final class FlightsTableViewController: UITableViewController {
     private let flightsType: FlightsType
     private let networkService: NetworkService
     private(set) var date = Date()
+    private(set) var airport = Airport.airports[0]
     
     // MARK: - Lifecycle
     init(flightsType: FlightsType, networkService: NetworkService) {
@@ -31,7 +32,7 @@ final class FlightsTableViewController: UITableViewController {
         super.viewDidLoad()
         setupActivityIndicator()
         setupTableView()
-        updateFlights(date: date)
+        updateFlights(date: date, airport: airport)
     }
     
     // MARK: - Table view data source
@@ -51,18 +52,28 @@ final class FlightsTableViewController: UITableViewController {
         return cell
     }
     
-    func updateFlights(date: Date) {
-        if !Calendar.current.isDate(date, inSameDayAs: self.date) {
+    func updateFlights(date: Date, airport: Airport) {
+        if !Calendar.current.isDate(date, inSameDayAs: self.date) ||
+            airport.iataCode != self.airport.iataCode {
             self.date = date
+            self.airport = airport
             activityIndicator.startAnimating()
         }
         Task {
             do {
                 switch flightsType {
                 case .arrivals:
-                    flights = try await networkService.getFlight(.arrivals, date: date)
+                    flights = try await networkService.getFlight(
+                        .arrivals,
+                        date: date,
+                        airportIATACode: airport.iataCode
+                    )
                 case .departures:
-                    flights = try await networkService.getFlight(.departures, date: date)
+                    flights = try await networkService.getFlight(
+                        .departures,
+                        date: date,
+                        airportIATACode: airport.iataCode
+                    )
                 }
                 DispatchQueue.main.async {
                     UIView.transition(
@@ -72,12 +83,11 @@ final class FlightsTableViewController: UITableViewController {
                     ) {
                         self.tableView.reloadData()
                     }
-                    if self.activityIndicator.isAnimating {
-                        self.activityIndicator.stopAnimating()
-                    }
+                    self.activityIndicator.stopAnimating()
                 }
             } catch {
                 print(error)
+                DispatchQueue.main.async { self.activityIndicator.stopAnimating() }
             }
         }
     }
@@ -97,7 +107,7 @@ final class FlightsTableViewController: UITableViewController {
     }
     
     @objc private func swipeToRefresh() {
-        updateFlights(date: date)
+        updateFlights(date: date, airport: airport)
         refreshControl?.endRefreshing()
     }
     

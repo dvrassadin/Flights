@@ -17,7 +17,7 @@ final class TabBarController: UITabBarController {
             image: UIImage(systemName: "gear"),
             style: .plain,
             target: self,
-            action: #selector(openDatePicker)
+            action: #selector(showFlightsParameters)
         )
     }
     
@@ -52,11 +52,11 @@ final class TabBarController: UITabBarController {
         viewControllers = [departuresViewController, arrivalsViewController]
     }
     
-    @objc private func openDatePicker() {
+    @objc private func showFlightsParameters() {
         guard let flightsVC = selectedViewController as? FlightsTableViewController else {
             return
         }
-        let settingsVC = FlightsParametersViewController(date: flightsVC.date, delegate: self)
+        let settingsVC = FlightsParametersViewController(date: flightsVC.date, airport: flightsVC.airport, delegate: self)
         guard let sheet = settingsVC.sheetPresentationController else {
             return
         }
@@ -69,8 +69,8 @@ final class TabBarController: UITabBarController {
 // MARK: - FlightsParametersViewControllerDelegate
 
 extension TabBarController: FlightsParametersViewControllerDelegate {
-    func updateFlightsParameters(date: Date) {
+    func updateFlightsParameters(date: Date, airport: Airport) {
         guard let flightsVC = selectedViewController as? FlightsTableViewController else { return }
-        flightsVC.updateFlights(date: date)
+        flightsVC.updateFlights(date: date, airport: airport)
     }
 }

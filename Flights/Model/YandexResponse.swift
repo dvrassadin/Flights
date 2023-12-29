@@ -18,7 +18,7 @@ struct Flight: Decodable {
     let arrival: Date?
     let departure: Date?
     var carrierTitle: String { thread.carrier.title }
-    var carrierIATA: String { thread.carrier.codes.iata }
+    var carrierIATA: String? { thread.carrier.codes.iata }
     let terminal: String?
     
     private let thread: Thread
@@ -33,7 +33,7 @@ struct Flight: Decodable {
             
             let codes: Code
             struct Code: Decodable {
-                let iata: String
+                let iata: String?
             }
         }
     }
