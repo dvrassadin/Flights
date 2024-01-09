@@ -30,6 +30,7 @@ final class FlightsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tabBarController?.navigationItem.title = airport.name
         setupActivityIndicator()
         setupTableView()
         updateFlights(date: date, airport: airport)
@@ -57,6 +58,7 @@ final class FlightsTableViewController: UITableViewController {
             airport.iataCode != self.airport.iataCode {
             self.date = date
             self.airport = airport
+            DispatchQueue.main.async { self.tabBarController?.navigationItem.title = airport.name }
             activityIndicator.startAnimating()
         }
         Task {
@@ -81,6 +83,7 @@ final class FlightsTableViewController: UITableViewController {
                         duration: 0.5,
                         options: .transitionCrossDissolve
                     ) {
+                        //                        self.tabBarController?.navigationItem.title = airport.name
                         self.tableView.reloadData()
                     }
                     self.activityIndicator.stopAnimating()

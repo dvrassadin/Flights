@@ -182,11 +182,7 @@ final class FlightDetailsViewController: UIViewController {
         }
         routeLabel.text = flight.title
         vehicleLabel.text = flight.vehicle
-        if flight.terminal != nil {
-            terminalNameLabel.text = flight.terminal
-        } else {
-            terminalNameLabel.text = "Unknown"
-        }
+        terminalNameLabel.text = flight.terminal == nil ? "Unknown" : flight.terminal
         switch flightType {
         case .departures:
             directionTitleLabel.text = "Departure"

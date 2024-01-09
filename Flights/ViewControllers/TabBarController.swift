@@ -53,13 +53,9 @@ final class TabBarController: UITabBarController {
     }
     
     @objc private func showFlightsParameters() {
-        guard let flightsVC = selectedViewController as? FlightsTableViewController else {
-            return
-        }
+        guard let flightsVC = selectedViewController as? FlightsTableViewController else { return }
         let settingsVC = FlightsParametersViewController(date: flightsVC.date, airport: flightsVC.airport, delegate: self)
-        guard let sheet = settingsVC.sheetPresentationController else {
-            return
-        }
+        guard let sheet = settingsVC.sheetPresentationController else { return }
         sheet.prefersGrabberVisible = true
         sheet.detents = [.medium(), .large()]
         present(settingsVC, animated: true)
