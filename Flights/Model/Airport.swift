@@ -36,6 +36,16 @@ extension Airport {
         Airport(name: "Yakutsk", iataCode: "YKS", city: "Yakutsk"),
         Airport(name: "Chita-Kadala", iataCode: "HTA", city: "Chita"),
         Airport(name: "Omsk Central", iataCode: "OMS", city: "Omsk"),
-        Airport(name: "Roshchino", iataCode: "TJM", city: "Tyumen")
+        Airport(name: "Roshchino", iataCode: "TJM", city: "Tyumen"),
+        Airport(name: "Talagi", iataCode: "ARH", city: "Arkhangelsk"),
+        Airport(name: "Narimanovo", iataCode: "ASF", city: "Astrakhan"),
+        Airport(name: "Barnaul", iataCode: "BAX", city: "Barnaul"),
+        Airport(name: "Tunoshna", iataCode: "IAR", city: "Yaroslavl"),
+        Airport(name: "Balandino", iataCode: "CEK", city: "Chelyabinsk"),
+        Airport(name: "Khanty-Mansiysk", iataCode: "HMA", city: "Khanty-Mansiysk"),
+        Airport(name: "Baikal", iataCode: "UUD", city: "Ulan-Ude"),
+        Airport(name: "Gagarinsky", iataCode: "GSV", city: "Saratov"),
+        Airport(name: "Besovets", iataCode: "PES", city: "Petrozavodsk"),
+        Airport(name: "Perm", iataCode: "PEE", city: "Perm")
     ]
 }

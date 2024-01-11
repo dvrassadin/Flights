@@ -83,7 +83,6 @@ final class FlightsTableViewController: UITableViewController {
                         duration: 0.5,
                         options: .transitionCrossDissolve
                     ) {
-                        //                        self.tabBarController?.navigationItem.title = airport.name
                         self.tableView.reloadData()
                     }
                     self.activityIndicator.stopAnimating()
