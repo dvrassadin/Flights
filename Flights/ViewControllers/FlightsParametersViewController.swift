@@ -107,23 +107,24 @@ final class FlightsParametersViewController: UIViewController {
         updateButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            segmentedControl.topAnchor.constraint(equalTo: view.topAnchor, constant: 25),
+            segmentedControl.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
             segmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             segmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             
-            datePicker.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 10),
+            datePicker.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 5),
             datePicker.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             datePicker.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            datePicker.heightAnchor.constraint(equalToConstant: 300),
+            datePicker.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.7),
             
             airportPicker.topAnchor.constraint(equalTo: datePicker.topAnchor),
             airportPicker.leadingAnchor.constraint(equalTo: datePicker.leadingAnchor),
             airportPicker.trailingAnchor.constraint(equalTo: datePicker.trailingAnchor),
             airportPicker.heightAnchor.constraint(equalTo: datePicker.heightAnchor),
             
-            updateButton.topAnchor.constraint(equalTo: datePicker.bottomAnchor, constant: 10),
+            updateButton.topAnchor.constraint(equalTo: datePicker.bottomAnchor, constant: 5),
             updateButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            updateButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10)
+            updateButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            updateButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10)
         ])
     }
     
