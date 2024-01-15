@@ -165,11 +165,6 @@ extension FlightsParametersViewController: UIPickerViewDataSource, UIPickerViewD
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         let airport = airports[row]
-        return airport.city + " - " + airport.name
+        return airport.city == airport.name ? airport.city : airport.city + " — " + airport.name
     }
-        
-//    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-//        let label = UILabel()
-//        return label
-//    }
 }

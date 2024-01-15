@@ -58,10 +58,21 @@ final class FlightsTableViewController: UITableViewController {
             airport.iataCode != self.airport.iataCode {
             self.date = date
             self.airport = airport
-            DispatchQueue.main.async { self.tabBarController?.navigationItem.title = airport.name }
+            tabBarController?.navigationItem.title = airport.name
             activityIndicator.startAnimating()
         }
         Task {
+            defer {
+                self.activityIndicator.stopAnimating()
+                self.refreshControl?.endRefreshing()
+                DispatchQueue.main.async {
+                    UIView.transition(
+                        with: self.tableView,
+                        duration: 0.5,
+                        options: .transitionCrossDissolve
+                    ) { self.tableView.reloadData() }
+                }
+            }
             do {
                 switch flightsType {
                 case .arrivals:
@@ -77,19 +88,22 @@ final class FlightsTableViewController: UITableViewController {
                         airportIATACode: airport.iataCode
                     )
                 }
+            } catch NetworkError.emptyData {
+                flights = []
                 DispatchQueue.main.async {
-                    UIView.transition(
-                        with: self.tableView,
-                        duration: 0.5,
-                        options: .transitionCrossDissolve
-                    ) {
-                        self.tableView.reloadData()
-                    }
-                    self.activityIndicator.stopAnimating()
+                    self.showAlert(
+                        title: "No Flights",
+                        message: "No flights were found. Try to change the date or airport."
+                    )
                 }
             } catch {
-                print(error)
-                DispatchQueue.main.async { self.activityIndicator.stopAnimating() }
+                flights = []
+                DispatchQueue.main.async {
+                    self.showAlert(
+                        title: "Loading Error",
+                        message: "Failed to load flights. Please try again or check your internet connection."
+                    )
+                }
             }
         }
     }
@@ -110,7 +124,6 @@ final class FlightsTableViewController: UITableViewController {
     
     @objc private func swipeToRefresh() {
         updateFlights(date: date, airport: airport)
-        refreshControl?.endRefreshing()
     }
     
     private func setupActivityIndicator() {
@@ -121,6 +134,14 @@ final class FlightsTableViewController: UITableViewController {
             activityIndicator.centerYAnchor.constraint(equalTo: view.layoutMarginsGuide.centerYAnchor)
         ])
         activityIndicator.startAnimating()
+    }
+    
+    // TODO: Create alert for network errors
+    private func showAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel)
+        alertController.addAction(action)
+        present(alertController, animated: true)
     }
     
     // MARK: - Navigation

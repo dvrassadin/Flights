@@ -12,7 +12,7 @@ protocol NetworkService {
 }
 
 enum NetworkError: Error {
-    case invalidURL, noData, invalidData
+    case invalidURL, emptyData
 }
 
 final class YandexNetworkService: NetworkService {
@@ -38,19 +38,19 @@ final class YandexNetworkService: NetworkService {
             url.append(queryItems: [URLQueryItem(name: "event", value: "departure")])
         }
         
-        guard let (data, _) = try? await URLSession.shared.data(from: url) else {
-            throw NetworkError.noData
-        }
-        
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        decoder.dateDecodingStrategy = .iso8601
-                
         do {
+            let (data, _) = try await URLSession.shared.data(from: url)
+            
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            decoder.dateDecodingStrategy = .iso8601
+            
             let flights = try decoder.decode(YandexResponse.self, from: data).schedule
+            guard !flights.isEmpty else { throw NetworkError.emptyData }
+            
             return flights
         } catch {
-            throw NetworkError.invalidData
+            throw error
         }
     }
 }
