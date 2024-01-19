@@ -15,7 +15,7 @@ final class TabBarController: UITabBarController {
         textView.backgroundColor = .systemYellow
         let url = "http://rasp.yandex.ru/"
         let text = "Данные предоставлены сервисом Яндекс.Расписания"
-        textView.text = text + "\n" + url
+        textView.text = text + "\n\n" + url
         textView.textAlignment = .center
         textView.dataDetectorTypes = .link
         textView.isEditable = false

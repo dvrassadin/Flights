@@ -108,7 +108,7 @@ final class FlightsTableViewController: UITableViewController {
         }
     }
     
-    // MARK: - SetupUI
+    // MARK: - Setup UI
     private func setupTableView() {
         tableView.register(
             FlightTableViewCell.self,
@@ -136,7 +136,6 @@ final class FlightsTableViewController: UITableViewController {
         activityIndicator.startAnimating()
     }
     
-    // TODO: Create alert for network errors
     private func showAlert(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .cancel)
