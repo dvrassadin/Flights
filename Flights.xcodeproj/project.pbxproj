@@ -18,6 +18,8 @@
 		513646FD2B3308DC00A190E1 /* FlightsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513646FC2B3308DC00A190E1 /* FlightsTableViewController.swift */; };
 		513646FF2B3309BF00A190E1 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513646FE2B3309BF00A190E1 /* NetworkService.swift */; };
 		513CFECB2B3AB65D007F737F /* FlightDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513CFECA2B3AB65D007F737F /* FlightDetailsViewController.swift */; };
+		51784A4C2B610F470009A60B /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 51784A4B2B610F470009A60B /* Localizable.xcstrings */; };
+		51784A4E2B6126CA0009A60B /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 51784A4D2B6126CA0009A60B /* InfoPlist.xcstrings */; };
 		517967BA2B3448B800827E02 /* FlightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517967B92B3448B700827E02 /* FlightTableViewCell.swift */; };
 		517B0CD72B3328EF008B6B48 /* YandexResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517B0CD62B3328EF008B6B48 /* YandexResponse.swift */; };
 		51CBBED52B3D821D008A8DBD /* Airport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CBBED42B3D821D008A8DBD /* Airport.swift */; };
@@ -30,7 +32,6 @@
 		513646DF2B32FA4F00A190E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		513646E12B32FA4F00A190E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		513646E82B32FA5100A190E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		513646EB2B32FA5100A190E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		513646ED2B32FA5100A190E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		513646F32B32FB4D00A190E1 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		513646F52B32FB9100A190E1 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
@@ -40,6 +41,9 @@
 		513646FC2B3308DC00A190E1 /* FlightsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsTableViewController.swift; sourceTree = "<group>"; };
 		513646FE2B3309BF00A190E1 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		513CFECA2B3AB65D007F737F /* FlightDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDetailsViewController.swift; sourceTree = "<group>"; };
+		51784A4B2B610F470009A60B /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		51784A4D2B6126CA0009A60B /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
+		51784A4F2B613FCA0009A60B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		517967B92B3448B700827E02 /* FlightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightTableViewCell.swift; sourceTree = "<group>"; };
 		517B0CD62B3328EF008B6B48 /* YandexResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexResponse.swift; sourceTree = "<group>"; };
 		51CBBED42B3D821D008A8DBD /* Airport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Airport.swift; sourceTree = "<group>"; };
@@ -86,6 +90,8 @@
 				513646FE2B3309BF00A190E1 /* NetworkService.swift */,
 				517967BB2B348F5600827E02 /* Model */,
 				513646E82B32FA5100A190E1 /* Assets.xcassets */,
+				51784A4B2B610F470009A60B /* Localizable.xcstrings */,
+				51784A4D2B6126CA0009A60B /* InfoPlist.xcstrings */,
 				513646EA2B32FA5100A190E1 /* LaunchScreen.storyboard */,
 				513646ED2B32FA5100A190E1 /* Info.plist */,
 			);
@@ -164,7 +170,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
+				ru,
 			);
 			mainGroup = 513646D32B32FA4F00A190E1;
 			productRefGroup = 513646DD2B32FA4F00A190E1 /* Products */;
@@ -182,7 +188,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				513646F42B32FB4D00A190E1 /* .gitignore in Resources */,
+				51784A4E2B6126CA0009A60B /* InfoPlist.xcstrings in Resources */,
 				513646EC2B32FA5100A190E1 /* LaunchScreen.storyboard in Resources */,
+				51784A4C2B610F470009A60B /* Localizable.xcstrings in Resources */,
 				513646E92B32FA5100A190E1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,7 +224,7 @@
 		513646EA2B32FA5100A190E1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				513646EB2B32FA5100A190E1 /* Base */,
+				51784A4F2B613FCA0009A60B /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -276,7 +284,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -333,7 +341,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -370,6 +378,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -403,6 +412,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

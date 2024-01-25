@@ -185,11 +185,11 @@ final class FlightDetailsViewController: UIViewController {
         terminalNameLabel.text = flight.terminal == nil ? "unknown" : flight.terminal
         switch flightType {
         case .departures:
-            directionTitleLabel.text = "Departure"
+            directionTitleLabel.text = String(localized: "Departure")
             dateLabel.text = flight.departure?.formatted(date: .long, time: .omitted)
             timeLabel.text = flight.departure?.formatted(date: .omitted, time: .shortened)
         case .arrivals:
-            directionTitleLabel.text = "Arrival"
+            directionTitleLabel.text = String(localized: "Arrival")
             dateLabel.text = flight.arrival?.formatted(date: .long, time: .omitted)
             timeLabel.text = flight.arrival?.formatted(date: .omitted, time: .shortened)
         }

@@ -1,0 +1,628 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Airport" : {
+      "comment" : "Segment name",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Аэропорт"
+          }
+        }
+      }
+    },
+    "Arkhangelsk" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Архангельск"
+          }
+        }
+      }
+    },
+    "Arrival" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Прилёт"
+          }
+        }
+      }
+    },
+    "Arrivals" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Прилёты"
+          }
+        }
+      }
+    },
+    "Astrakhan" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Астрахань"
+          }
+        }
+      }
+    },
+    "Baikal" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Байкал"
+          }
+        }
+      }
+    },
+    "Balandino" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Баландино"
+          }
+        }
+      }
+    },
+    "Barnaul" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Барнаул"
+          }
+        }
+      }
+    },
+    "Besovets" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Бесовец"
+          }
+        }
+      }
+    },
+    "Chelyabinsk" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Челябинск"
+          }
+        }
+      }
+    },
+    "Chita" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Чита"
+          }
+        }
+      }
+    },
+    "Date" : {
+      "comment" : "Segment name",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дата"
+          }
+        }
+      }
+    },
+    "Departure" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вылет"
+          }
+        }
+      }
+    },
+    "Departures" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вылеты"
+          }
+        }
+      }
+    },
+    "Domodedovo" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Домодедово"
+          }
+        }
+      }
+    },
+    "Failed to load flights. Please try again or check your internet connection." : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не удалось загрузить рейсы. Попробуйте снова или проверьте интернет соединение."
+          }
+        }
+      }
+    },
+    "Gagarinsky" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Гагарин"
+          }
+        }
+      }
+    },
+    "Irkutsk" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Иркутск"
+          }
+        }
+      }
+    },
+    "Kadala" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Кадала"
+          }
+        }
+      }
+    },
+    "Kaliningrad" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Калининград"
+          }
+        }
+      }
+    },
+    "Kazan" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Казань"
+          }
+        }
+      }
+    },
+    "Khabarovsk" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Хабаровск"
+          }
+        }
+      }
+    },
+    "Khabarovsk-Novy" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Хабаровск-Новый"
+          }
+        }
+      }
+    },
+    "Khanty-Mansiysk" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ханты-Мансийск"
+          }
+        }
+      }
+    },
+    "Khrabrovo" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Храброво"
+          }
+        }
+      }
+    },
+    "Koltsovo" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Кольцово"
+          }
+        }
+      }
+    },
+    "Krasnodar" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Краснодар"
+          }
+        }
+      }
+    },
+    "Krasnoyarsk" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Красноярск"
+          }
+        }
+      }
+    },
+    "Kurumoch" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Курумоч"
+          }
+        }
+      }
+    },
+    "Loading Error" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ошибка загрузки"
+          }
+        }
+      }
+    },
+    "Moscow" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Москва"
+          }
+        }
+      }
+    },
+    "No Flights" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Рейсов нет"
+          }
+        }
+      }
+    },
+    "No flights were found. Try to change the date or airport." : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Рейсы не найдены. Попробуйте поменять дату или аэропорт."
+          }
+        }
+      }
+    },
+    "Novosibirsk" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Новосибирск"
+          }
+        }
+      }
+    },
+    "Omsk" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Омск"
+          }
+        }
+      }
+    },
+    "Omsk Central" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Омск-Центральный"
+          }
+        }
+      }
+    },
+    "Pashkovsky" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пашковский"
+          }
+        }
+      }
+    },
+    "Perm" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пермь"
+          }
+        }
+      }
+    },
+    "Petrozavodsk" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Петрозаводск"
+          }
+        }
+      }
+    },
+    "Platov" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Платов"
+          }
+        }
+      }
+    },
+    "Pulkovo" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пулково"
+          }
+        }
+      }
+    },
+    "Roshchino" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Рощино"
+          }
+        }
+      }
+    },
+    "Rostov-on-Don" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ростов-на-Дону"
+          }
+        }
+      }
+    },
+    "Saint-Petersburg" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Санкт-Петербург"
+          }
+        }
+      }
+    },
+    "Samara" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Самара"
+          }
+        }
+      }
+    },
+    "Saratov" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Саратов"
+          }
+        }
+      }
+    },
+    "Sheremetyevo" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Шереметьево"
+          }
+        }
+      }
+    },
+    "Sochi" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сочи"
+          }
+        }
+      }
+    },
+    "Talagi" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Талаги"
+          }
+        }
+      }
+    },
+    "Tolmachevo" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Толмачёво"
+          }
+        }
+      }
+    },
+    "Tunoshna" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Туношна"
+          }
+        }
+      }
+    },
+    "Tyumen" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тюмень"
+          }
+        }
+      }
+    },
+    "Ufa" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Уфа"
+          }
+        }
+      }
+    },
+    "Ulan-Ude" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Улан-Удэ"
+          }
+        }
+      }
+    },
+    "Update Flights" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Обновить рейсы"
+          }
+        }
+      }
+    },
+    "Vladivostok" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Владивосток"
+          }
+        }
+      }
+    },
+    "Vnukovo" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Внуково"
+          }
+        }
+      }
+    },
+    "Yakutsk" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Якутск"
+          }
+        }
+      }
+    },
+    "Yaroslavl" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ярославль"
+          }
+        }
+      }
+    },
+    "Yekaterinburg" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Екатеринбург"
+          }
+        }
+      }
+    },
+    "Yemelyanovo" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Емельяново"
+          }
+        }
+      }
+    },
+    "Zhukovsky" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Жуковский"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

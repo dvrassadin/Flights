@@ -47,7 +47,7 @@ final class TabBarController: UITabBarController {
         )
         let departureImage = UIImage(systemName: "airplane.departure")
         let departuresTabBarItem = UITabBarItem(
-            title: FlightsType.departures.rawValue,
+            title: String(localized: FlightsType.departures.rawValue),
             image: departureImage,
             selectedImage: departureImage
         )
@@ -59,7 +59,7 @@ final class TabBarController: UITabBarController {
         )
         let arrivalImage = UIImage(systemName: "airplane.arrival")
         let arrivalsTabBarItem = UITabBarItem(
-            title: FlightsType.arrivals.rawValue,
+            title: String(localized: FlightsType.arrivals.rawValue),
             image: arrivalImage,
             selectedImage: arrivalImage
         )

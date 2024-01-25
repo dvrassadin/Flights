@@ -25,8 +25,8 @@ final class FlightsParametersViewController: UIViewController {
         
         var description: String {
             switch self {
-            case .date: return "Date"
-            case .airport: return "Airport"
+            case .date: return String(localized: "Date", comment: "Segment name")
+            case .airport: return String(localized: "Airport", comment: "Segment name")
             }
         }
     }
@@ -49,7 +49,7 @@ final class FlightsParametersViewController: UIViewController {
     
     private let updateButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Update Flights", for: .normal)
+        button.setTitle(String(localized: "Update Flights"), for: .normal)
         button.configuration = .borderedProminent()
         return button
     }()

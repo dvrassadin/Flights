@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum FlightsType: String {
+enum FlightsType: LocalizedStringResource {
     case departures = "Departures"
     case arrivals = "Arrivals"
 }

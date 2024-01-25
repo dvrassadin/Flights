@@ -92,16 +92,16 @@ final class FlightsTableViewController: UITableViewController {
                 flights = []
                 DispatchQueue.main.async {
                     self.showAlert(
-                        title: "No Flights",
-                        message: "No flights were found. Try to change the date or airport."
+                        title: String(localized: "No Flights"),
+                        message: String(localized: "No flights were found. Try to change the date or airport.")
                     )
                 }
             } catch {
                 flights = []
                 DispatchQueue.main.async {
                     self.showAlert(
-                        title: "Loading Error",
-                        message: "Failed to load flights. Please try again or check your internet connection."
+                        title: String(localized: "Loading Error"),
+                        message: String(localized: "Failed to load flights. Please try again or check your internet connection.")
                     )
                 }
             }
