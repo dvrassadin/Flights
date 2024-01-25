@@ -4,6 +4,12 @@
     "Airport" : {
       "comment" : "Segment name",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Airport"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14,6 +20,12 @@
     },
     "Arkhangelsk" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arkhangelsk"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -24,6 +36,12 @@
     },
     "Arrival" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arrival"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -34,6 +52,12 @@
     },
     "Arrivals" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arrivals"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -44,6 +68,12 @@
     },
     "Astrakhan" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Astrakhan"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -54,6 +84,12 @@
     },
     "Baikal" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Baikal"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -64,6 +100,12 @@
     },
     "Balandino" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Balandino"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -74,6 +116,12 @@
     },
     "Barnaul" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Barnaul"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -84,6 +132,12 @@
     },
     "Besovets" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Besovets"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -94,6 +148,12 @@
     },
     "Chelyabinsk" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chelyabinsk"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -104,6 +164,12 @@
     },
     "Chita" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chita"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -115,6 +181,12 @@
     "Date" : {
       "comment" : "Segment name",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Date"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -125,6 +197,12 @@
     },
     "Departure" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Departure"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -135,6 +213,12 @@
     },
     "Departures" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Departures"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -145,6 +229,12 @@
     },
     "Domodedovo" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Domodedovo"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -155,6 +245,12 @@
     },
     "Failed to load flights. Please try again or check your internet connection." : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Failed to load flights. Please try again or check your internet connection."
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -165,6 +261,12 @@
     },
     "Gagarinsky" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gagarinsky"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -175,6 +277,12 @@
     },
     "Irkutsk" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Irkutsk"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -185,6 +293,12 @@
     },
     "Kadala" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kadala"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -195,6 +309,12 @@
     },
     "Kaliningrad" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kaliningrad"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -205,6 +325,12 @@
     },
     "Kazan" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kazan"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -215,6 +341,12 @@
     },
     "Khabarovsk" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Khabarovsk"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -225,6 +357,12 @@
     },
     "Khabarovsk-Novy" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Khabarovsk-Novy"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -235,6 +373,12 @@
     },
     "Khanty-Mansiysk" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Khanty-Mansiysk"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -245,6 +389,12 @@
     },
     "Khrabrovo" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Khrabrovo"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -255,6 +405,12 @@
     },
     "Koltsovo" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Koltsovo"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -265,6 +421,12 @@
     },
     "Krasnodar" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Krasnodar"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -275,6 +437,12 @@
     },
     "Krasnoyarsk" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Krasnoyarsk"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -285,6 +453,12 @@
     },
     "Kurumoch" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kurumoch"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -295,6 +469,12 @@
     },
     "Loading Error" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading Error"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -305,6 +485,12 @@
     },
     "Moscow" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moscow"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -315,6 +501,12 @@
     },
     "No Flights" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Flights"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -325,6 +517,12 @@
     },
     "No flights were found. Try to change the date or airport." : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No flights were found. Try to change the date or airport."
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -335,6 +533,12 @@
     },
     "Novosibirsk" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Novosibirsk"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -345,6 +549,12 @@
     },
     "Omsk" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Omsk"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -355,6 +565,12 @@
     },
     "Omsk Central" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Omsk Central"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -365,6 +581,12 @@
     },
     "Pashkovsky" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pashkovsky"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -375,6 +597,12 @@
     },
     "Perm" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Perm"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -385,6 +613,12 @@
     },
     "Petrozavodsk" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Petrozavodsk"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -395,6 +629,12 @@
     },
     "Platov" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Platov"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -405,6 +645,12 @@
     },
     "Pulkovo" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pulkovo"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -415,6 +661,12 @@
     },
     "Roshchino" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Roshchino"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -425,6 +677,12 @@
     },
     "Rostov-on-Don" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rostov-on-Don"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -435,6 +693,12 @@
     },
     "Saint-Petersburg" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saint-Petersburg"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -445,6 +709,12 @@
     },
     "Samara" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Samara"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -455,6 +725,12 @@
     },
     "Saratov" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saratov"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -465,6 +741,12 @@
     },
     "Sheremetyevo" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sheremetyevo"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -475,6 +757,12 @@
     },
     "Sochi" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sochi"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -485,6 +773,12 @@
     },
     "Talagi" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Talagi"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -495,6 +789,12 @@
     },
     "Tolmachevo" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tolmachevo"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -505,6 +805,12 @@
     },
     "Tunoshna" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tunoshna"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -515,6 +821,12 @@
     },
     "Tyumen" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tyumen"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -525,6 +837,12 @@
     },
     "Ufa" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ufa"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -535,6 +853,12 @@
     },
     "Ulan-Ude" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ulan-Ude"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -545,6 +869,12 @@
     },
     "Update Flights" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Update Flights"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -555,6 +885,12 @@
     },
     "Vladivostok" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vladivostok"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -565,6 +901,12 @@
     },
     "Vnukovo" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vnukovo"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -575,6 +917,12 @@
     },
     "Yakutsk" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yakutsk"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -585,6 +933,12 @@
     },
     "Yaroslavl" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yaroslavl"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -595,6 +949,12 @@
     },
     "Yekaterinburg" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yekaterinburg"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -605,6 +965,12 @@
     },
     "Yemelyanovo" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yemelyanovo"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -615,6 +981,12 @@
     },
     "Zhukovsky" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zhukovsky"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
