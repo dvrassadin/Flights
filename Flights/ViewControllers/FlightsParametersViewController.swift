@@ -142,13 +142,16 @@ final class FlightsParametersViewController: UIViewController {
               let segment = Segment(rawValue: sender.selectedSegmentIndex)
         else { return }
         
+        let animationDuration: TimeInterval = 0.2
         switch segment {
         case .date:
-            datePicker.isHidden = false
-            airportPicker.isHidden = true
+            airportPicker.fadeOut(withDuration: animationDuration) {
+                self.datePicker.fadeIn(withDuration: animationDuration)
+            }
         case .airport:
-            datePicker.isHidden = true
-            airportPicker.isHidden = false
+            datePicker.fadeOut(withDuration: animationDuration) {
+                self.airportPicker.fadeIn(withDuration: animationDuration)
+            }
         }
     }
 }

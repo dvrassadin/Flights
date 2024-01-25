@@ -18,6 +18,7 @@
 		513646FD2B3308DC00A190E1 /* FlightsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513646FC2B3308DC00A190E1 /* FlightsTableViewController.swift */; };
 		513646FF2B3309BF00A190E1 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513646FE2B3309BF00A190E1 /* NetworkService.swift */; };
 		513CFECB2B3AB65D007F737F /* FlightDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513CFECA2B3AB65D007F737F /* FlightDetailsViewController.swift */; };
+		517443B72B625300006EB71D /* UIView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517443B62B625300006EB71D /* UIView+Animation.swift */; };
 		51784A4C2B610F470009A60B /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 51784A4B2B610F470009A60B /* Localizable.xcstrings */; };
 		51784A4E2B6126CA0009A60B /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 51784A4D2B6126CA0009A60B /* InfoPlist.xcstrings */; };
 		517967BA2B3448B800827E02 /* FlightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517967B92B3448B700827E02 /* FlightTableViewCell.swift */; };
@@ -41,6 +42,7 @@
 		513646FC2B3308DC00A190E1 /* FlightsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsTableViewController.swift; sourceTree = "<group>"; };
 		513646FE2B3309BF00A190E1 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		513CFECA2B3AB65D007F737F /* FlightDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDetailsViewController.swift; sourceTree = "<group>"; };
+		517443B62B625300006EB71D /* UIView+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Animation.swift"; sourceTree = "<group>"; };
 		51784A4B2B610F470009A60B /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		51784A4D2B6126CA0009A60B /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		51784A4F2B613FCA0009A60B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			children = (
 				517967B92B3448B700827E02 /* FlightTableViewCell.swift */,
 				51F205D22B3AF43200BD7189 /* CopyrightView.swift */,
+				517443B62B625300006EB71D /* UIView+Animation.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				51F205D12B3ADF6000BD7189 /* FlightsParametersViewController.swift in Sources */,
 				513646FD2B3308DC00A190E1 /* FlightsTableViewController.swift in Sources */,
 				513CFECB2B3AB65D007F737F /* FlightDetailsViewController.swift in Sources */,
+				517443B72B625300006EB71D /* UIView+Animation.swift in Sources */,
 				513646F62B32FB9100A190E1 /* APIKey.swift in Sources */,
 				51CBBED52B3D821D008A8DBD /* Airport.swift in Sources */,
 				51F205D32B3AF43200BD7189 /* CopyrightView.swift in Sources */,
