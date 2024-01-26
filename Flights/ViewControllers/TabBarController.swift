@@ -8,27 +8,32 @@
 import UIKit
 
 final class TabBarController: UITabBarController {
+    let networkService: NetworkService = YandexNetworkService()
     
     // MARK: - UI components
     private let copyrightTextView: UITextView = {
         let textView = UITextView()
         textView.backgroundColor = .systemYellow
-        let url = "http://rasp.yandex.ru/"
-        let text = "Данные предоставлены сервисом Яндекс.Расписания"
-        textView.text = text + "\n\n" + url
         textView.textAlignment = .center
         textView.dataDetectorTypes = .link
         textView.isEditable = false
         textView.isSelectable = true
         textView.isScrollEnabled = false
+        textView.isHidden = true
         return textView
     }()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+    }
+    
+    // MARK: - Setup UI
+    private func setupUI() {
         setupTabs()
         setupCopyrightTextView()
+        Task { await showCopyrightTextView() }
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             image: UIImage(systemName: "gear"),
             style: .plain,
@@ -37,10 +42,7 @@ final class TabBarController: UITabBarController {
         )
     }
     
-    // MARK: - Setup UI
     private func setupTabs() {
-        let networkService: NetworkService = YandexNetworkService()
-        
         let departuresViewController = FlightsTableViewController(
             flightsType: .departures,
             networkService: networkService
@@ -77,6 +79,12 @@ final class TabBarController: UITabBarController {
             copyrightTextView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7),
             copyrightTextView.bottomAnchor.constraint(equalTo: tabBar.topAnchor, constant: -10)
         ])
+    }
+    
+    private func showCopyrightTextView() async {
+        guard let copyright = try? await networkService.getCopyright() else { return }
+        copyrightTextView.text = copyright.text + "\n\n" + copyright.url
+        copyrightTextView.fadeIn(withDuration: 1)
     }
     
     // MARK: - Navigation

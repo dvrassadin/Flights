@@ -1,5 +1,5 @@
 //
-//  YandexResponse.swift
+//  FlightsResponse.swift
 //  Flights
 //
 //  Created by Daniil Rassadin on 20/12/23.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct YandexResponse: Decodable {
+struct FlightsResponse: Decodable {
     let schedule: [Flight]
 }
 

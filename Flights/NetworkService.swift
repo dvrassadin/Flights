@@ -9,6 +9,7 @@ import Foundation
 
 protocol NetworkService {
     func getFlight(_ type: FlightsType, date: Date, airportIATACode: String) async throws -> [Flight]
+    func getCopyright() async throws -> Copyright
 }
 
 enum NetworkError: Error {
@@ -16,11 +17,19 @@ enum NetworkError: Error {
 }
 
 final class YandexNetworkService: NetworkService {
-    private let baseURL = "https://api.rasp.yandex.net/v3.0/schedule"
+    private let baseURL = "https://api.rasp.yandex.net/v3.0"
+    private let session = URLSession.shared
+    private let decoder: JSONDecoder = {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        decoder.dateDecodingStrategy = .iso8601
+        return decoder
+    }()
     
     func getFlight(_ type: FlightsType, date: Date, airportIATACode: String) async throws -> [Flight] {
         guard var url = URL(string: baseURL) else { throw NetworkError.invalidURL }
         
+        url.append(path: "schedule")
         url.append(queryItems: [
             URLQueryItem(name: "apikey", value: apiKey),
             URLQueryItem(name: "station", value: airportIATACode),
@@ -39,16 +48,27 @@ final class YandexNetworkService: NetworkService {
         }
         
         do {
-            let (data, _) = try await URLSession.shared.data(from: url)
+            let (data, _) = try await session.data(from: url)
             
-            let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            decoder.dateDecodingStrategy = .iso8601
-            
-            let flights = try decoder.decode(YandexResponse.self, from: data).schedule
+            let flights = try decoder.decode(FlightsResponse.self, from: data).schedule
             guard !flights.isEmpty else { throw NetworkError.emptyData }
             
             return flights
+        } catch {
+            throw error
+        }
+    }
+    
+    func getCopyright() async throws -> Copyright {
+        guard var url = URL(string: baseURL) else { throw NetworkError.invalidURL }
+        
+        url.append(path: "copyright")
+        url.append(queryItems: [URLQueryItem(name: "apikey", value: apiKey)])
+        
+        do {
+            let (data, _) = try await session.data(from: url)
+
+            return try decoder.decode(CopyrightResponse.self, from: data).copyright
         } catch {
             throw error
         }

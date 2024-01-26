@@ -58,17 +58,17 @@ final class FlightsTableViewController: UITableViewController {
             airport.iataCode != self.airport.iataCode {
             self.date = date
             self.airport = airport
-            tabBarController?.navigationItem.title = airport.name
             activityIndicator.startAnimating()
         }
         Task {
             defer {
                 self.activityIndicator.stopAnimating()
                 self.refreshControl?.endRefreshing()
+                self.tabBarController?.navigationItem.title = airport.name
                 DispatchQueue.main.async {
                     UIView.transition(
                         with: self.tableView,
-                        duration: 0.5,
+                        duration: 0.4,
                         options: .transitionCrossDissolve
                     ) { self.tableView.reloadData() }
                 }

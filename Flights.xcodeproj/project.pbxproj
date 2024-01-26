@@ -22,10 +22,10 @@
 		51784A4C2B610F470009A60B /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 51784A4B2B610F470009A60B /* Localizable.xcstrings */; };
 		51784A4E2B6126CA0009A60B /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 51784A4D2B6126CA0009A60B /* InfoPlist.xcstrings */; };
 		517967BA2B3448B800827E02 /* FlightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517967B92B3448B700827E02 /* FlightTableViewCell.swift */; };
-		517B0CD72B3328EF008B6B48 /* YandexResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517B0CD62B3328EF008B6B48 /* YandexResponse.swift */; };
+		517B0CD72B3328EF008B6B48 /* FlightsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517B0CD62B3328EF008B6B48 /* FlightsResponse.swift */; };
 		51CBBED52B3D821D008A8DBD /* Airport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CBBED42B3D821D008A8DBD /* Airport.swift */; };
+		51DCD4E52B6376C5006FFD35 /* CopyrightResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DCD4E42B6376C5006FFD35 /* CopyrightResponse.swift */; };
 		51F205D12B3ADF6000BD7189 /* FlightsParametersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F205D02B3ADF6000BD7189 /* FlightsParametersViewController.swift */; };
-		51F205D32B3AF43200BD7189 /* CopyrightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F205D22B3AF43200BD7189 /* CopyrightView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,10 +47,10 @@
 		51784A4B2B610F470009A60B /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		51784A4D2B6126CA0009A60B /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		517967B92B3448B700827E02 /* FlightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightTableViewCell.swift; sourceTree = "<group>"; };
-		517B0CD62B3328EF008B6B48 /* YandexResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexResponse.swift; sourceTree = "<group>"; };
+		517B0CD62B3328EF008B6B48 /* FlightsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsResponse.swift; sourceTree = "<group>"; };
 		51CBBED42B3D821D008A8DBD /* Airport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Airport.swift; sourceTree = "<group>"; };
+		51DCD4E42B6376C5006FFD35 /* CopyrightResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyrightResponse.swift; sourceTree = "<group>"; };
 		51F205D02B3ADF6000BD7189 /* FlightsParametersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsParametersViewController.swift; sourceTree = "<group>"; };
-		51F205D22B3AF43200BD7189 /* CopyrightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyrightView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				513646FA2B33087200A190E1 /* FlightsType.swift */,
-				517B0CD62B3328EF008B6B48 /* YandexResponse.swift */,
+				517B0CD62B3328EF008B6B48 /* FlightsResponse.swift */,
+				51DCD4E42B6376C5006FFD35 /* CopyrightResponse.swift */,
 				51CBBED42B3D821D008A8DBD /* Airport.swift */,
 			);
 			path = Model;
@@ -126,7 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				517967B92B3448B700827E02 /* FlightTableViewCell.swift */,
-				51F205D22B3AF43200BD7189 /* CopyrightView.swift */,
 				517443B62B625300006EB71D /* UIView+Animation.swift */,
 			);
 			path = Helpers;
@@ -205,6 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51DCD4E52B6376C5006FFD35 /* CopyrightResponse.swift in Sources */,
 				513646E02B32FA4F00A190E1 /* AppDelegate.swift in Sources */,
 				513646F92B32FF8800A190E1 /* TabBarController.swift in Sources */,
 				51F205D12B3ADF6000BD7189 /* FlightsParametersViewController.swift in Sources */,
@@ -213,12 +214,11 @@
 				517443B72B625300006EB71D /* UIView+Animation.swift in Sources */,
 				513646F62B32FB9100A190E1 /* APIKey.swift in Sources */,
 				51CBBED52B3D821D008A8DBD /* Airport.swift in Sources */,
-				51F205D32B3AF43200BD7189 /* CopyrightView.swift in Sources */,
 				517967BA2B3448B800827E02 /* FlightTableViewCell.swift in Sources */,
 				513646E22B32FA4F00A190E1 /* SceneDelegate.swift in Sources */,
 				513646FB2B33087200A190E1 /* FlightsType.swift in Sources */,
 				513646FF2B3309BF00A190E1 /* NetworkService.swift in Sources */,
-				517B0CD72B3328EF008B6B48 /* YandexResponse.swift in Sources */,
+				517B0CD72B3328EF008B6B48 /* FlightsResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
