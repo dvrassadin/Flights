@@ -1,5 +1,5 @@
 //
-//  TabBarController.swift
+//  FlightsTabBarController.swift
 //  Flights
 //
 //  Created by Daniil Rassadin on 20/12/23.
@@ -7,8 +7,8 @@
 
 import UIKit
 
-final class TabBarController: UITabBarController {
-    let networkService: NetworkService = YandexNetworkService()
+final class FlightsTabBarController: UITabBarController {
+    let modelData: ModelData
     
     // MARK: - UI components
     private let copyrightTextView: UITextView = {
@@ -24,6 +24,15 @@ final class TabBarController: UITabBarController {
     }()
     
     // MARK: - Lifecycle
+    init(modelData: ModelData) {
+        self.modelData = modelData
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -35,8 +44,7 @@ final class TabBarController: UITabBarController {
         setupCopyrightTextView()
         Task { await showCopyrightTextView() }
         navigationItem.rightBarButtonItem = UIBarButtonItem(
-            image: UIImage(systemName: "gear"),
-            style: .plain,
+            barButtonSystemItem: .edit,
             target: self,
             action: #selector(showFlightsParameters)
         )
@@ -45,7 +53,7 @@ final class TabBarController: UITabBarController {
     private func setupTabs() {
         let departuresViewController = FlightsTableViewController(
             flightsType: .departures,
-            networkService: networkService
+            modelData: modelData
         )
         let departureImage = UIImage(systemName: "airplane.departure")
         let departuresTabBarItem = UITabBarItem(
@@ -56,9 +64,7 @@ final class TabBarController: UITabBarController {
         departuresViewController.tabBarItem = departuresTabBarItem
         
         let arrivalsViewController = FlightsTableViewController(
-            flightsType: .arrivals,
-            networkService: networkService
-        )
+            flightsType: .arrivals, modelData: modelData)
         let arrivalImage = UIImage(systemName: "airplane.arrival")
         let arrivalsTabBarItem = UITabBarItem(
             title: String(localized: FlightsType.arrivals.rawValue),
@@ -82,15 +88,17 @@ final class TabBarController: UITabBarController {
     }
     
     private func showCopyrightTextView() async {
-        guard let copyright = try? await networkService.getCopyright() else { return }
+        guard let copyright = try? await modelData.copyright else { return }
         copyrightTextView.text = copyright.text + "\n\n" + copyright.url
         copyrightTextView.fadeIn(withDuration: 1)
     }
     
     // MARK: - Navigation
     @objc private func showFlightsParameters() {
-        guard let flightsVC = selectedViewController as? FlightsTableViewController else { return }
-        let settingsVC = FlightsParametersViewController(date: flightsVC.date, airport: flightsVC.airport, delegate: self)
+        let settingsVC = FlightsParametersViewController(
+            modelData: modelData,
+            delegate: self
+        )
         guard let sheet = settingsVC.sheetPresentationController else { return }
         sheet.prefersGrabberVisible = true
         sheet.detents = [.medium()]
@@ -99,9 +107,14 @@ final class TabBarController: UITabBarController {
 }
 
 // MARK: - FlightsParametersViewControllerDelegate
-extension TabBarController: FlightsParametersViewControllerDelegate {
-    func updateFlightsParameters(date: Date, airport: Airport) {
+extension FlightsTabBarController: FlightsParametersViewControllerDelegate {
+    func updateFlights() {
+        viewControllers?.forEach {
+            if let flightsVC = $0 as? FlightsTableViewController {
+                flightsVC.wereParametersChanged = true
+            }
+        }
         guard let flightsVC = selectedViewController as? FlightsTableViewController else { return }
-        flightsVC.updateFlights(date: date, airport: airport)
+        flightsVC.updateFlights()
     }
 }

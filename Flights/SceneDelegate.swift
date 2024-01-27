@@ -16,7 +16,10 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         options connectionOptions: UIScene.ConnectionOptions
     ) {
         guard let scene = (scene as? UIWindowScene) else { return }
-        let navigationController = UINavigationController(rootViewController: TabBarController())
+        let networkService = YandexNetworkService()
+        let modelData = ModelData(networkService: networkService)
+        let tabBarController = FlightsTabBarController(modelData: modelData)
+        let navigationController = UINavigationController(rootViewController: tabBarController)
         window = UIWindow(windowScene: scene)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()

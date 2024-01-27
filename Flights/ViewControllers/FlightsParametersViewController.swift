@@ -8,16 +8,14 @@
 import UIKit
 
 protocol FlightsParametersViewControllerDelegate: AnyObject {
-    func updateFlightsParameters(date: Date, airport: Airport)
+    func updateFlights()
 }
 
 final class FlightsParametersViewController: UIViewController {
     
     // MARK: - Properties
     private weak var delegate: FlightsParametersViewControllerDelegate?
-    private var date: Date
-    private let selectedAirportIndex: Int
-    private let airports = Airport.airports.sorted { $0.city < $1.city }
+    private var modelData: ModelData
     
     enum Segment: Int, CaseIterable, CustomStringConvertible {
         case date
@@ -55,9 +53,8 @@ final class FlightsParametersViewController: UIViewController {
     }()
     
     // MARK: - Lifecycle
-    init(date: Date, airport: Airport, delegate: FlightsParametersViewControllerDelegate? = nil) {
-        self.date = date
-        selectedAirportIndex = airports.firstIndex { $0.name == airport.name } ?? 0
+    init(modelData: ModelData, delegate: FlightsParametersViewControllerDelegate? = nil) {
+        self.modelData = modelData
         self.delegate = delegate
         super.init(nibName: nil, bundle: nil)
     }
@@ -76,12 +73,12 @@ final class FlightsParametersViewController: UIViewController {
     // MARK: - Setup UI
     private func setupUI() {
         view.backgroundColor = .systemBackground
-        datePicker.date = date
+        datePicker.date = modelData.currentDate
         addSubviews()
         setupConstraints()
         updateButton.addTarget(
             self,
-            action: #selector(updateFlightsParameters),
+            action: #selector(updateFlights),
             for: .touchUpInside
         )
         segmentedControl.addTarget(
@@ -90,7 +87,11 @@ final class FlightsParametersViewController: UIViewController {
             for: .valueChanged
         )
         airportPicker.isHidden = true
-        airportPicker.selectRow(selectedAirportIndex, inComponent: 0, animated: false)
+        airportPicker.selectRow(
+            modelData.airports.firstIndex(where: { $0.iataCode == modelData.currentAirport.iataCode }) ?? 0,
+            inComponent: 0,
+            animated: false
+        )
     }
     
     private func addSubviews() {
@@ -129,11 +130,10 @@ final class FlightsParametersViewController: UIViewController {
     }
     
     // MARK: - Navigation
-    @objc private func updateFlightsParameters() {
-        delegate?.updateFlightsParameters(
-            date: datePicker.date,
-            airport: airports[airportPicker.selectedRow(inComponent: 0)]
-        )
+    @objc private func updateFlights() {
+        modelData.currentDate = datePicker.date
+        modelData.currentAirport = modelData.airports[airportPicker.selectedRow(inComponent: 0)]
+        delegate?.updateFlights()
         dismiss(animated: true)
     }
     
@@ -163,11 +163,11 @@ extension FlightsParametersViewController: UIPickerViewDataSource, UIPickerViewD
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        airports.count
+        modelData.airports.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        let airport = airports[row]
+        let airport = modelData.airports[row]
         return airport.city == airport.name ? airport.city : airport.city + " — " + airport.name
     }
 }

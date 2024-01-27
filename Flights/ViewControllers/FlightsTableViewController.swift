@@ -10,17 +10,17 @@ import UIKit
 final class FlightsTableViewController: UITableViewController {
     
     // MARK: - Properties
-    private let activityIndicator = UIActivityIndicatorView(style: .large)
-    private var flights = [Flight]()
+    private let modelData: ModelData
     private let flightsType: FlightsType
-    private let networkService: NetworkService
-    private(set) var date = Date()
-    private(set) var airport = Airport.airports[0]
+    var wereParametersChanged = false
+    
+    // MARK: - UI components
+    private let activityIndicator = UIActivityIndicatorView(style: .large)
     
     // MARK: - Lifecycle
-    init(flightsType: FlightsType, networkService: NetworkService) {
+    init(flightsType: FlightsType, modelData: ModelData) {
         self.flightsType = flightsType
-        self.networkService = networkService
+        self.modelData = modelData
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -30,15 +30,23 @@ final class FlightsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tabBarController?.navigationItem.title = airport.name
+        tabBarController?.navigationItem.title = modelData.currentAirport.name
         setupActivityIndicator()
         setupTableView()
-        updateFlights(date: date, airport: airport)
+        updateFlights()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if wereParametersChanged { updateFlights() }
     }
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return flights.count
+        switch flightsType {
+        case .departures: return modelData.departures.count
+        case .arrivals: return modelData.arrivals.count
+        }
     }
     
     override func tableView(
@@ -49,61 +57,45 @@ final class FlightsTableViewController: UITableViewController {
             withIdentifier: FlightTableViewCell.identifier,
             for: indexPath
         ) as? FlightTableViewCell else { return UITableViewCell() }
-        cell.configure(with: flights[indexPath.row], type: flightsType)
+        switch flightsType {
+        case .departures:
+            cell.configure(with: modelData.departures[indexPath.row], type: flightsType)
+        case .arrivals:
+            cell.configure(with: modelData.arrivals[indexPath.row], type: flightsType)
+        }
         return cell
     }
     
-    func updateFlights(date: Date, airport: Airport) {
-        if !Calendar.current.isDate(date, inSameDayAs: self.date) ||
-            airport.iataCode != self.airport.iataCode {
-            self.date = date
-            self.airport = airport
-            activityIndicator.startAnimating()
-        }
+    // MARK: - Data updating
+    func updateFlights() {
+        if wereParametersChanged { activityIndicator.startAnimating() }
         Task {
             defer {
                 self.activityIndicator.stopAnimating()
                 self.refreshControl?.endRefreshing()
-                self.tabBarController?.navigationItem.title = airport.name
-                DispatchQueue.main.async {
-                    UIView.transition(
-                        with: self.tableView,
-                        duration: 0.4,
-                        options: .transitionCrossDissolve
-                    ) { self.tableView.reloadData() }
-                }
+                self.tabBarController?.navigationItem.title = modelData.currentAirport.name
+                UIView.transition(
+                    with: self.tableView,
+                    duration: 0.4,
+                    options: .transitionCrossDissolve
+                ) { self.tableView.reloadData() }
             }
             do {
                 switch flightsType {
-                case .arrivals:
-                    flights = try await networkService.getFlight(
-                        .arrivals,
-                        date: date,
-                        airportIATACode: airport.iataCode
-                    )
-                case .departures:
-                    flights = try await networkService.getFlight(
-                        .departures,
-                        date: date,
-                        airportIATACode: airport.iataCode
-                    )
+                case .arrivals: try await modelData.updateFlights(.arrivals)
+                case .departures: try await modelData.updateFlights(.departures)
                 }
+                wereParametersChanged = false
             } catch NetworkError.emptyData {
-                flights = []
-                DispatchQueue.main.async {
-                    self.showAlert(
-                        title: String(localized: "No Flights"),
-                        message: String(localized: "No flights were found. Try to change the date or airport.")
-                    )
-                }
+                self.showAlert(
+                    title: String(localized: "No Flights"),
+                    message: String(localized: "No flights were found. Try to change the date or airport.")
+                )
             } catch {
-                flights = []
-                DispatchQueue.main.async {
-                    self.showAlert(
-                        title: String(localized: "Loading Error"),
-                        message: String(localized: "Failed to load flights. Please try again or check your internet connection.")
-                    )
-                }
+                self.showAlert(
+                    title: String(localized: "Loading Error"),
+                    message: String(localized: "Failed to load flights. Please try again or check your internet connection.")
+                )
             }
         }
     }
@@ -123,7 +115,7 @@ final class FlightsTableViewController: UITableViewController {
     }
     
     @objc private func swipeToRefresh() {
-        updateFlights(date: date, airport: airport)
+        updateFlights()
     }
     
     private func setupActivityIndicator() {
@@ -145,9 +137,23 @@ final class FlightsTableViewController: UITableViewController {
     
     // MARK: - Navigation
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        navigationController?.pushViewController(
-            FlightDetailsViewController(flight: flights[indexPath.row], flightType: flightsType),
-            animated: true
-        )
+        switch flightsType {
+        case .departures:
+            navigationController?.pushViewController(
+                FlightDetailsViewController(
+                    flight: modelData.departures[indexPath.row],
+                    flightType: flightsType
+                ),
+                animated: true
+            )
+        case .arrivals:
+            navigationController?.pushViewController(
+                FlightDetailsViewController(
+                    flight: modelData.arrivals[indexPath.row],
+                    flightType: flightsType
+                ),
+                animated: true
+            )
+        }
     }
 }

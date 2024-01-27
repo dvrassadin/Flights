@@ -8,7 +8,7 @@
 import Foundation
 
 protocol NetworkService {
-    func getFlight(_ type: FlightsType, date: Date, airportIATACode: String) async throws -> [Flight]
+    func getFlight(_ type: FlightsType, date: Date, airportIATACode: String) async throws -> FlightsResponse
     func getCopyright() async throws -> Copyright
 }
 
@@ -17,6 +17,8 @@ enum NetworkError: Error {
 }
 
 final class YandexNetworkService: NetworkService {
+    
+    // MARK: - Properties
     private let baseURL = "https://api.rasp.yandex.net/v3.0"
     private let session = URLSession.shared
     private let decoder: JSONDecoder = {
@@ -26,7 +28,8 @@ final class YandexNetworkService: NetworkService {
         return decoder
     }()
     
-    func getFlight(_ type: FlightsType, date: Date, airportIATACode: String) async throws -> [Flight] {
+    // MARK: - Yandex requests
+    func getFlight(_ type: FlightsType, date: Date, airportIATACode: String) async throws -> FlightsResponse {
         guard var url = URL(string: baseURL) else { throw NetworkError.invalidURL }
         
         url.append(path: "schedule")
@@ -37,7 +40,8 @@ final class YandexNetworkService: NetworkService {
             URLQueryItem(name: "format", value: "json"),
             URLQueryItem(name: "date", value: date.ISO8601Format()),
             URLQueryItem(name: "system", value: "iata"),
-            
+            URLQueryItem(name: "show_systems", value: "iata"),
+            URLQueryItem(name: "limit", value: "500")
         ])
         
         switch type {
@@ -47,16 +51,12 @@ final class YandexNetworkService: NetworkService {
             url.append(queryItems: [URLQueryItem(name: "event", value: "departure")])
         }
         
-        do {
-            let (data, _) = try await session.data(from: url)
-            
-            let flights = try decoder.decode(FlightsResponse.self, from: data).schedule
-            guard !flights.isEmpty else { throw NetworkError.emptyData }
-            
-            return flights
-        } catch {
-            throw error
-        }
+        let (data, _) = try await session.data(from: url)
+        
+        let flightsResponse = try decoder.decode(FlightsResponse.self, from: data)
+        guard !flightsResponse.schedule.isEmpty else { throw NetworkError.emptyData }
+        
+        return flightsResponse
     }
     
     func getCopyright() async throws -> Copyright {
@@ -65,12 +65,8 @@ final class YandexNetworkService: NetworkService {
         url.append(path: "copyright")
         url.append(queryItems: [URLQueryItem(name: "apikey", value: apiKey)])
         
-        do {
-            let (data, _) = try await session.data(from: url)
-
-            return try decoder.decode(CopyrightResponse.self, from: data).copyright
-        } catch {
-            throw error
-        }
+        let (data, _) = try await session.data(from: url)
+        
+        return try decoder.decode(CopyrightResponse.self, from: data).copyright
     }
 }
