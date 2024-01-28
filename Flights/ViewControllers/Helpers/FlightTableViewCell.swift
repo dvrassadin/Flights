@@ -14,7 +14,6 @@ final class FlightTableViewCell: UITableViewCell {
     private let dateFormat = Date.FormatStyle().day(.twoDigits).month(.abbreviated)
     
     // MARK: - UI components
-    
     private let timeLabel: UILabel = {
         let label = UILabel()
         label.font = .preferredFont(forTextStyle: .headline)
@@ -63,7 +62,6 @@ final class FlightTableViewCell: UITableViewCell {
     }()
 
     // MARK: - Lifecycle
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubviews()
@@ -75,7 +73,6 @@ final class FlightTableViewCell: UITableViewCell {
     }
     
     // MARK: - Setup UI
-    
     private func addSubviews() {
         dateStack.addArrangedSubview(timeLabel)
         dateStack.addArrangedSubview(dateLabel)

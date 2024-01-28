@@ -8,6 +8,7 @@
 import UIKit
 
 final class FlightDetailsViewController: UIViewController {
+    
     // MARK: - Properties
     private let flight: Flight
     private let flightType: FlightsType

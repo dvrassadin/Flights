@@ -32,16 +32,19 @@ final class YandexNetworkService: NetworkService {
     func getFlight(_ type: FlightsType, date: Date, airportIATACode: String) async throws -> FlightsResponse {
         guard var url = URL(string: baseURL) else { throw NetworkError.invalidURL }
         
+        let isoDateFormatter = ISO8601DateFormatter()
+        isoDateFormatter.formatOptions = [.withFullDate]
+        
         url.append(path: "schedule")
         url.append(queryItems: [
             URLQueryItem(name: "apikey", value: apiKey),
             URLQueryItem(name: "station", value: airportIATACode),
             URLQueryItem(name: "lang", value: "ru_RU"),
             URLQueryItem(name: "format", value: "json"),
-            URLQueryItem(name: "date", value: date.ISO8601Format()),
+            URLQueryItem(name: "date", value: isoDateFormatter.string(from: date)),
             URLQueryItem(name: "system", value: "iata"),
             URLQueryItem(name: "show_systems", value: "iata"),
-            URLQueryItem(name: "limit", value: "500")
+            URLQueryItem(name: "limit", value: "500"),
         ])
         
         switch type {
