@@ -8,7 +8,7 @@
 import UIKit
 
 final class FlightsTabBarController: UITabBarController {
-    let modelData: ModelData
+    private let modelData: ModelData
     
     // MARK: - UI components
     private let copyrightTextView: UITextView = {
