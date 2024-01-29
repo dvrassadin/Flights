@@ -32,6 +32,7 @@ final class YandexNetworkService: NetworkService {
     func getFlight(_ type: FlightsType, date: Date, airportIATACode: String) async throws -> FlightsResponse {
         guard var url = URL(string: baseURL) else { throw NetworkError.invalidURL }
         
+        /* This formatter is made to fix a bug where you sometimes send a date with a time zone, and because of time zone, it becomes a different date to the server. So, the formatter removes the time and time zone from the date. */
         let isoDateFormatter = ISO8601DateFormatter()
         isoDateFormatter.formatOptions = [.withFullDate]
         

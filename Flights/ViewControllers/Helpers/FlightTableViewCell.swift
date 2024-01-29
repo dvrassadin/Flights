@@ -100,6 +100,11 @@ final class FlightTableViewCell: UITableViewCell {
             vehicleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
             vehicleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5)
         ])
+        
+        timeLabel.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
+        dateLabel.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
+        titleLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        numberLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
     }
     
     func configure(with flight: Flight, type: FlightsType) {
